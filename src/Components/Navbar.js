@@ -1,14 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
-export class Navbar extends Component {
-  render() {
+const Navbar = ()=> {
     return (
       <div>
-        <nav className="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <nav className="navbar fixed-top bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
           <div className="container-fluid">
-            <a className="navbar-brand" href="/">
-              Navbar
-            </a>
+            <Link className="navbar-brand" to="/general">
+              NewsHub
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -26,26 +26,26 @@ export class Navbar extends Component {
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/">
+                  <Link className="nav-link active" aria-current="page" to="/general">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/about">
+                  <Link className="nav-link" to="/general">
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                  Category
                 </a>
-                <ul class="dropdown-menu">
-                  <li><a className="dropdown-item" href="/">Business</a></li>
-                  <li><a className="dropdown-item" href="/">Entertainment</a></li>
-                  <li><a className="dropdown-item" href="/">Science</a></li>
-                  <li><a className="dropdown-item" href="/">Sports</a></li>
-                  <li><a className="dropdown-item" href="/">Technology</a></li>
-                  <li><a className="dropdown-item" href="/">Health</a></li>
+                <ul className="dropdown-menu">
+                  <li><Link className="dropdown-item" to="/business">Business</Link></li>
+                  <li><Link className="dropdown-item" to="/entertainment">Entertainment</Link></li>
+                  <li><Link className="dropdown-item" to="/science">Science</Link></li>
+                  <li><Link className="dropdown-item" to="/sports">Sports</Link></li>
+                  <li><Link className="dropdown-item" to="/technology">Technology</Link></li>
+                  <li><Link className="dropdown-item" to="/health">Health</Link></li>
                </ul>
               </li>
               </ul>
@@ -55,6 +55,4 @@ export class Navbar extends Component {
       </div>
     );
   }
-}
-
 export default Navbar;
